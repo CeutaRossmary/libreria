@@ -1,0 +1,33 @@
+<%- include ../layouts/cabecera.ejs %>
+        <h1>Listado de Clientes</h1> <a href="/clientes/crear" type="button" class="btn btn-primary">Agregar Cliente</a>
+        <br><br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Rut</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Direccion Entrega</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Telefono</th>
+              <th scope="col" colspan="2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (clientes) { %>
+              <% clientes.forEach(cliente => { %>
+                <tr>
+                  <td scope="row"><%= cliente.id %></td>
+                  <td><%= cliente.nombre + " " + cliente.paterno + " " + cliente.materno %> </td>
+                  <td><%= cliente.direccion %></td>
+                  <td><%= cliente.correo %></td>
+                  <td><%= cliente.telefono %></td>
+                  <td><a href="/clientes/editar/<%= cliente.id %>" type="button" class="btn btn-secondary">Editar</a></td>
+                  <td><a href="/clientes/eliminar/<%= cliente.id %>" type="button" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+              <% }) %>
+            <% } %>
+          </tbody>
+        </table>
+        <br>
+<%- include ../layouts/pie.ejs %>

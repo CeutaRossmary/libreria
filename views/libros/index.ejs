@@ -1,0 +1,33 @@
+<%- include ../layouts/cabecera.ejs %>
+        <h1 class="mt-2">Existencia de Libros</h1> 
+        <a href="/libros/crear" type="button" class="btn btn-primary m-2">Agregar Libro</a>
+        <br><br>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" class="col-1">Id_L</th>
+              <th scope="col"></th>
+              <th scope="col" class="col-2">Titulo</th>
+              <th scope="col" class="col-4">Reseña</th>
+              <th scope="col"class="col-2">Autor</th>
+              <th scope="col" class="col-2">Año Publicación</th>
+              <th scope="col" colspan="2"class="col-1 text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% libros.forEach(libro => { %>
+              <tr>
+                <td scope="row"><%= libro.id %></td>
+                <td><img class="img-thumbnail" width="150" src="./images/<%= libro.imagen %>" alt=""></td>
+                <td><%= libro.titulo %></td>
+                <td><%= libro.resena %></td>
+                <td><%= libro.autor %></td>
+                <td><%= libro.anio %></td>
+                <td><a href="/libros/editar/<%= libro.id %>" type="button" class="btn btn-secondary">Editar</a></td>
+                <td><a href="/libros/eliminar/<%= libro.id %>" type="button" class="btn btn-danger">Eliminar</a></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <br>
+<%- include ../layouts/pie.ejs %>

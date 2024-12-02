@@ -1,0 +1,37 @@
+
+.colors{
+  background-color:#03261c !important;
+
+}
+
+.tarjeta-libro {
+  padding-top: 50px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card-img {
+  width: 254px !important;
+  height: 300px !important;
+}
+
+.tarjeta {
+  background-color: var(--color-acento-claro);
+  text-align: center;
+  padding: 14px;
+  width: 307px;
+  height: 600px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: 200ms;
+  margin-bottom: 10px;
+}
+.mover:hover {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  translate: 0px -5px;
+}
+.card-text{
+  text-align: justify;
+}

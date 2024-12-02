@@ -1,0 +1,45 @@
+<%- include ../layouts/cabecera.ejs %>
+
+<h1>Modificar Datos del Cliente</h1>
+<br>
+<form method="post" action="../actualizar">
+    <div class="form-group mb-2">
+        <label for="">Rut</label>
+        <input type="text" name="rut" value="<%= cliente[0].rut %>" class="form-control" required>
+        <input type="hidden" name="id" value="<%= cliente[0].id %>">
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" value="<%= cliente[0].nombre %>" class="form-control" required>
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Apellido Paterno</label>
+        <input type="text" name="paterno" value="<%= cliente[0].paterno %>" class="form-control" required >
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Apellido Materno</label>
+        <input type="text" name="materno" value="<%= cliente[0].materno %>" class="form-control" required>
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Direccion de Entrega</label>
+        <input type="text" name="direccion" value="<%= cliente[0].direccion %>" class="form-control">
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Correo</label>
+        <input type="email" name="correo" value="<%= cliente[0].correo %>" class="form-control" required>
+    </div>
+
+    <div class="form-group mb-2">
+        <label for="">Telefono</label>
+        <input type="text" name="telefono" value="<%= cliente[0].telefono %>" class="form-control">
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+</form>
+
+<%- include ../layouts/pie.ejs %>
